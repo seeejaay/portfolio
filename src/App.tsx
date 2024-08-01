@@ -17,10 +17,12 @@ function App() {
       <header className="mb-8">
         <img src={logo} className="App-logo" alt="logo" />
         <p className="text-lg text-white ">
-          Edit <code className=" font-bold">src/App.tsx</code> and save to
+          Edit <code className="font-bold">src/App.tsx</code> and save to
           reload.
         </p>
-        <Button onClick={handleClick}>Learn React</Button>
+        <Button className="bg-blueish hover:bg-light" onClick={handleClick}>
+          Learn React
+        </Button>
         {showAlert && (
           <Alert variant="destructive" className="mt-4">
             <AlertTitle className="font-bold">Alert Title</AlertTitle>
