@@ -116,7 +116,7 @@
   --sidebar-ring: oklch(0.547 0.021 43.1);
 }
 .bg-grain {
-  background-image: url("../public//resources/background.png");
+  background-image: url("/resources/background.png");
   background-repeat: repeat;
 }
 @layer base {
