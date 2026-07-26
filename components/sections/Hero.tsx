@@ -18,7 +18,7 @@ export default function Hero() {
               </h4>
               <p className="text-4xl text-[#545050]"> /ˌfʊl stæk dɪˈvɛləpər/</p>
             </div>
-            <p className="w-[900px] py-4 text-justify text-5xl text-[#545050]">
+            <p className="w-225 py-4 text-justify text-5xl text-[#545050]">
               Engineering end-to-end solutions using React, Next.js for the
               interface and robust C#, Laravel, and Node.js for backend logic.
             </p>
