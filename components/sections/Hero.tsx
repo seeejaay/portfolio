@@ -1,9 +1,10 @@
 export default function Hero() {
   return (
     <main className="bg-grain min-h-screen bg-[#E5E5E3] p-4 text-zinc-800 sm:p-6 lg:p-10">
-      <div className="flex min-h-full flex-col items-center justify-between gap-10 rounded-tl-lg border-s-2 border-t-2 border-black p-6 sm:p-10 lg:flex-row">
+      <div className="flex min-h-screen flex-col items-start justify-between gap-10 rounded-tl-lg border-s-2 border-t-2 border-black p-6
+        sm:p-10 lg:flex-row">
         {/* Left Side */}
-        <section className="flex w-full flex-col items-start justify-start gap-12 pb-8 lg:gap-20 lg:pb-16">
+        <section className="flex w-full flex-col items-start justify-start gap-12 lg:gap-20 ">
           <div>
             <h1 className="flex flex-col text-left text-6xl leading-[0.85] font-bold tracking-normal text-[#2C2525] uppercase sm:text-8xl lg:text-[10.5rem]">
               <span>Carl</span>
