@@ -1,14 +1,12 @@
-import { Geist, Geist_Mono, Inter } from "next/font/google"
-
+import { Abhaya_Libre } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib/utils"
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const abhayaLibre = Abhaya_Libre({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-abhaya",
 })
 
 export default function RootLayout({
@@ -20,7 +18,7 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", inter.variable)}
+      className={cn("antialiased", abhayaLibre.variable, "font-sans")}
     >
       <body>
         <ThemeProvider>{children}</ThemeProvider>
