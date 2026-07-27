@@ -25,6 +25,7 @@ export default function RootLayout({
       <body className="bg-grain relative bg-[#E5E5E3] text-zinc-800">
         <ThemeProvider>
           {/* Render the imported navigation here */}
+
           <Navigation />
 
           {children}
