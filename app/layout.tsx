@@ -2,6 +2,8 @@ import { Abhaya_Libre } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
+// Import your new navigation component
+import Navigation from "@/components/Navigation"
 
 const abhayaLibre = Abhaya_Libre({
   subsets: ["latin"],
@@ -20,8 +22,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn("antialiased", abhayaLibre.variable, "font-sans")}
     >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className="bg-grain relative bg-[#E5E5E3] text-zinc-800">
+        <ThemeProvider>
+          {/* Render the imported navigation here */}
+          <Navigation />
+
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
