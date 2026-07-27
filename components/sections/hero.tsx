@@ -1,4 +1,3 @@
-
 export default function Hero() {
   return (
     <main className="bg-grain box-border h-screen w-full overflow-hidden bg-[#E5E5E3] p-3 text-zinc-800 sm:p-6 lg:p-8">
