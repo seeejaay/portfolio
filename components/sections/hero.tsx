@@ -1,8 +1,8 @@
 export default function Hero() {
   return (
-    <main className="bg-grain box-border h-screen w-full overflow-hidden bg-[#E5E5E3] p-3 text-zinc-800 sm:p-6 lg:p-8">
+    <>
       {/* Framed Inner Box */}
-      <div id="home" className="mt-0 lg:mt-12 box-border flex h-[calc(100vh-1.5rem)] w-full flex-row justify-between overflow-y-auto rounded-tl-lg border-s-2 border-t-2 border-black p-5 sm:h-[calc(100vh-3rem)] sm:p-8 lg:h-[calc(100vh-7.5rem)] lg:overflow-hidden lg:p-12 scroll-mt-24 lg:scroll-mt-32">
+      <div id="home" className=" box-border h-full xl:h-screen flex w-full flex-row justify-between overflow-y-auto rounded-tl-lg border-s-2 border-t-2 border-black  lg:overflow-hidden lg:p-12 scroll-mt-24 lg:scroll-mt-32 p-4" >
 
         <section>
           {/* Top: Name */}
@@ -32,6 +32,6 @@ export default function Hero() {
           </div>
         </section>
       </div>
-    </main>
+    </>
   )
 }
