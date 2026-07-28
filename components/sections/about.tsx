@@ -12,7 +12,7 @@ export default function About() {
           <h1 className="text-left text-5xl leading-[0.9] font-bold tracking-normal text-[#2C2525] uppercase sm:text-7xl lg:text-[8rem] lg:leading-[0.85]">
             Who Am I?
           </h1>
-          <p className="flex w-full flex-col gap-8 pt-3 text-justify text-xs text-[#545050] sm:text-lg lg:text-3xl xl:max-w-4xl">
+          <p className="flex w-full flex-col gap-8 pt-3 text-justify text-xs text-[#363636] sm:text-lg lg:text-3xl xl:max-w-4xl">
             <span>
               I am a full-stack engineer based in Quezon City. I build scalable
               and enterprise-level web applications with a focus on clean
