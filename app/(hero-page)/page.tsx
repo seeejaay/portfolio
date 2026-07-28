@@ -4,7 +4,7 @@ import About from "@/components/sections/about"
 export default function Page() {
   return (
     <>
-      <main className="flex flex-col bg-grain box-border w-full overflow-hidden bg-[#E5E5E3]  text-zinc-800 sm:p-6 lg:p-8 p-3  mt-0 xl:mt-22 ">
+      <main className="bg-grain bg-[#E5E5E3]text-zinc-800 mt-0 flex w-full flex-col overflow-hidden p-3 sm:p-6 lg:mt-16 lg:p-8 xl:mt-14">
         <Hero />
         <About />
       </main>
