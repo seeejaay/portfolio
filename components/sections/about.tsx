@@ -1,34 +1,54 @@
+import Image from "next/image"
+import personInSuite from "@/public/resources/person_suit.webp"
 export default function About() {
-    return (
-        <main className="bg-grain box-border h-screen w-full overflow-hidden px-3 text-zinc-800 sm:px-6 lg:px-8 lg:pt-20 pt-6">
-            {/* Framed Inner Box */}
-            <section id="about" className="box-border flex h-[calc(100vh-1.5rem)] w-full flex-row justify-between border-s-2  border-black p-5 sm:h-[calc(100vh-3rem)] sm:p-8 lg:h-[calc(100vh-9rem)] lg:overflow-hidden lg:p-12 scroll-mt-12 lg:scroll-mt-20">
-                <section>
-                    {/* Top: Name */}
-                    <div className="w-full">
-                        <h1 className="flex flex-col text-left text-5xl leading-[0.9] font-bold tracking-normal text-[#2C2525] uppercase sm:text-7xl lg:text-[6rem] lg:leading-[0.85]">
-                            Who Am I?
-                        </h1>
-                    </div>
+  return (
+    <>
+      {/* Framed Inner Box */}
+      <div
+        id="about"
+        className="border-box mt-14 flex scroll-mt-24 flex-col items-start justify-between border-s-2 border-black p-4 lg:gap-0 lg:px-12 xl:h-[calc(100vh-9rem)] xl:scroll-mt-16 xl:flex-row xl:gap-8 xl:px-8"
+      >
+        <div className="mb-4 flex w-full flex-col">
+          <h1 className="text-left text-5xl leading-[0.9] font-bold tracking-normal text-[#2C2525] uppercase sm:text-7xl lg:text-[8rem] lg:leading-[0.85]">
+            Who Am I?
+          </h1>
+          <p className="flex w-full flex-col gap-8 pt-3 text-justify text-xs text-[#363636] sm:text-lg lg:text-3xl xl:max-w-4xl">
+            <span>
+              I am a full-stack engineer based in Quezon City. I build scalable
+              and enterprise-level web applications with a focus on clean
+              interfaces and robust back-end architecture. I aim to deliver
+              products that stay maintainable as teams and requirements grow.
+            </span>
 
-                    {/* Middle: Role & Description */}
-                    <div className="my-auto w-full py-4">
-                        <div className="flex flex-col justify-start gap-1 sm:flex-row sm:items-end sm:gap-4">
-                            <h4 className="text-xl font-semibold text-[#2C2525] sm:text-4xl lg:text-7xl">
-                                Full Stack Developer
-                            </h4>
-                            <p className="text-sm text-[#545050] sm:text-xl lg:text-4xl">
-                                /ˌfʊl stæk dɪˈvɛləpər/
-                            </p>
-                        </div>
+            <span>
+              My work is driven by practical development experience
+              transitioning from completing full-stack internships to
+              engineering automated data extraction pipelines and custom
+              application workflows. That hands-on path helped me develop a
+              strong balance between shipping quickly and building reliable
+              systems.
+            </span>
 
-                        <p className="w-full max-w-4xl pt-3 text-xs text-[#545050] sm:text-lg lg:text-5xl">
-                            Engineering end-to-end solutions using React, Next.js for the
-                            interface and robust C#, Laravel, and Node.js for backend logic.
-                        </p>
-                    </div>
-                </section>
-            </section>
-        </main>
-    )
+            <span>
+              Beyond the screen, I train in long-distance running. When I&apos;m
+              unwinding, you&apos;ll usually find me playing tactical computer
+              games or catching up on favorite series and anime. These interests
+              keep me disciplined, curious, and energized for problem-solving in
+              day-to-day engineering work.
+            </span>
+          </p>
+        </div>
+        <div className="hidden shrink-0 items-center justify-center xl:flex">
+          <Image
+            src={personInSuite}
+            alt="A person in a suit"
+            className="h-auto w-full"
+            width={600}
+            height={600}
+            loading="eager"
+          />
+        </div>
+      </div>
+    </>
+  )
 }
