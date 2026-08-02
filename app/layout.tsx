@@ -57,7 +57,7 @@ export default function RootLayout({
       {/* Both custom utilities and theme classes combine seamlessly */}
       <body className="bg-background bg-texture bg-repeat">
         <Navigation />
-        <main className="flex items-center justify-center pt-20">
+        <main className="flex flex-col items-center justify-center pt-20">
           {children}
         </main>
         <Analytics />
