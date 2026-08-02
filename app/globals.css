@@ -2,8 +2,6 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
-
 html {
   scroll-behavior: smooth;
 }
@@ -105,8 +103,8 @@ html {
 
 .dark {
   /* Main Background & Text */
-  --background: oklch(0.2485 0.0352 244.73);          /* Secondary base */
-  --foreground: oklch(0.9571 0.0174 264.49);        /* Primary text */
+  --background: oklch(0.2485 0.0352 244.73); /* Secondary base */
+  --foreground: oklch(0.9571 0.0174 264.49); /* Primary text */
 
   /* Surface / Cards / Popovers */
   --card: oklch(0.28 0.038 244.73);
@@ -115,7 +113,7 @@ html {
   --popover-foreground: oklch(0.9571 0.0174 264.49);
 
   /* Primary Theme Actions */
-  --primary: oklch(0.4635 0.1156 255.93);           /* Accent blue buttons in dark mode */
+  --primary: oklch(0.4635 0.1156 255.93); /* Accent blue buttons in dark mode */
   --primary-foreground: oklch(0.98 0 0);
 
   /* Secondary Theme Actions */
@@ -127,7 +125,7 @@ html {
   --accent-foreground: oklch(0.9571 0.0174 264.49);
 
   /* UI Elements & Borders */
-  --muted: oklch(0.30 0.035 244.73);
+  --muted: oklch(0.3 0.035 244.73);
   --muted-foreground: oklch(0.72 0.03 264.49);
   --destructive: oklch(0.65 0.2 22);
   --border: oklch(1 0 0 / 12%);
