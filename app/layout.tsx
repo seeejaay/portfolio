@@ -1,7 +1,6 @@
 import { Montserrat } from "next/font/google"
 import localFont from "next/font/local"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import Navigation from "@/components/Navigation"
 import { Analytics } from "@vercel/analytics/next"
@@ -57,12 +56,10 @@ export default function RootLayout({
     >
       {/* Both custom utilities and theme classes combine seamlessly */}
       <body className="bg-background bg-texture bg-repeat">
-        <ThemeProvider>
-          <Navigation />
-          <main className="flex items-center justify-center pt-20">
-            {children}
-          </main>
-        </ThemeProvider>
+        <Navigation />
+        <main className="flex items-center justify-center pt-20">
+          {children}
+        </main>
         <Analytics />
       </body>
     </html>
