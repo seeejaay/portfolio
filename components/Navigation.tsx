@@ -10,7 +10,7 @@ export default function Navigation() {
   return (
     <header className="fixed top-0 left-0 z-50 w-full bg-background/80 backdrop-blur-md">
       <nav className="flex h-20 w-full items-center justify-between px-6 sm:px-12 md:px-16 lg:px-20 xl:px-28">
-        <span className="font-heading text-xl font-black tracking-wider uppercase">
+        <span className="font-heading text-xl font-black tracking-wider text-secondary uppercase">
           Carl Malabanan.
         </span>
 
