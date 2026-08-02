@@ -1,6 +1,8 @@
+import Image from "next/image"
+import personInSuite from "@/public/resources/person_suit.webp"
 export default function About() {
   return (
-    <main className="box-border h-screen w-full overflow-hidden px-3 pt-6 text-zinc-800 sm:px-6 lg:px-8 lg:pt-20">
+    <main className="bg-grain box-border h-screen w-full overflow-hidden px-3 pt-6 text-zinc-800 sm:px-6 lg:px-8 lg:pt-20">
       {/* Framed Inner Box */}
       <section
         id="about"
