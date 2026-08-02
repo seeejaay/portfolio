@@ -1,15 +1,42 @@
-import { Abhaya_Libre } from "next/font/google"
+import { Montserrat } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-// Import your new navigation component
 import Navigation from "@/components/Navigation"
 import { Analytics } from "@vercel/analytics/next"
 
-const abhayaLibre = Abhaya_Libre({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
-  variable: "--font-abhaya",
+  variable: "--font-montserrat",
+  display: "swap",
+})
+
+const agrandir = localFont({
+  src: [
+    {
+      path: "../public/fonts/Agrandir-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Agrandir-Regular.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Agrandir-TextBold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/Agrandir-GrandHeavy.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-agrandir",
+  display: "swap",
 })
 
 export default function RootLayout({
@@ -21,15 +48,20 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={cn("antialiased", abhayaLibre.variable, "font-sans")}
+      className={cn(
+        "antialiased",
+        montserrat.variable,
+        agrandir.variable,
+        "font-sans"
+      )}
     >
-      <body className="bg-grain relative bg-[#E5E5E3] text-zinc-800">
+      {/* Both custom utilities and theme classes combine seamlessly */}
+      <body className="bg-background bg-texture bg-repeat">
         <ThemeProvider>
-          {/* Render the imported navigation here */}
-
           <Navigation />
-
-          {children}
+          <main className="flex items-center justify-center pt-20">
+            {children}
+          </main>
         </ThemeProvider>
         <Analytics />
       </body>

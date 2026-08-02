@@ -1,37 +1,109 @@
+"use client"
+import Link from "next/link"
+import Image from "next/image"
+import { ArrowUpRight } from "lucide-react"
+import { socialLinks } from "@/constants/social"
+import { useResizableBox } from "@/hooks/useResizableBox"
+import PersonInSuite from "@/public/resources/personInSuit.png"
 export default function Hero() {
+  const { box, contentRef, handleMouseDown, handleDoubleClick } =
+    useResizableBox()
+
   return (
-    <>
-      <section
-        className="box-border flex scroll-mt-24 flex-col items-start justify-start gap-2 rounded-tl-md border-s-2 border-t-2 border-black p-4 md:gap-4 lg:p-6 xl:h-[calc(100vh-9rem)] xl:scroll-mt-32 xl:gap-14 xl:p-8 xl:pb-10"
-        id="home"
-      >
-        <h1 className="item-start flex flex-col text-left text-5xl leading-[0.9] font-extrabold text-[#2C2525] uppercase transition-all duration-300 ease-in-out *:tracking-normal sm:leading-[0.85] md:text-8xl xl:text-[9rem]">
-          <span>Carl</span>
-          <span>Justine</span>
-          <span>Malabanan</span>
-        </h1>
+    <main className="flex min-h-[calc(100vh-5rem)] w-full items-start px-6 py-16 sm:px-14 lg:px-20 xl:px-28">
+      <div className="grid w-full grid-cols-1 items-start gap-12 lg:grid-cols-12 lg:gap-16">
+        {/* Rectangle Resizable Box */}
+        <section className="flex min-w-0 flex-col gap-6 lg:col-span-7">
+          <div
+            className="relative z-10 w-full max-w-full overflow-hidden border border-gray-200 bg-transparent"
+            style={{
+              width: box.w,
+              height: box.h,
+              transform: `translate(${box.x}px, ${box.y}px)`,
+            }}
+          >
+            <div
+              onMouseDown={(e) => handleMouseDown(e, "top-left")}
+              onDoubleClick={handleDoubleClick}
+              className="absolute -top-0.75 -left-0.75 z-20 h-3 w-3 cursor-nwse-resize bg-accent"
+            />
+            <div
+              onMouseDown={(e) => handleMouseDown(e, "top-right")}
+              onDoubleClick={handleDoubleClick}
+              className="absolute -top-0.75 -right-0.75 z-20 h-3 w-3 cursor-nesw-resize bg-accent"
+            />
+            <div
+              onMouseDown={(e) => handleMouseDown(e, "bottom-left")}
+              onDoubleClick={handleDoubleClick}
+              className="absolute -bottom-0.75 -left-0.75 z-20 h-3 w-3 cursor-nesw-resize bg-accent"
+            />
+            <div
+              onMouseDown={(e) => handleMouseDown(e, "bottom-right")}
+              onDoubleClick={handleDoubleClick}
+              className="absolute -right-0.75 -bottom-0.75 z-20 h-3 w-3 cursor-nwse-resize bg-accent"
+            />
 
-        <div>
-          <dl className="flex flex-col gap-0 sm:flex-row sm:items-baseline sm:gap-2">
-            <dt className="text-2xl font-semibold text-[#2C2525] sm:text-3xl lg:text-5xl xl:text-6xl">
-              Full Stack Developer
-            </dt>
-            <dd className="text-sm text-[#545050] sm:text-base lg:text-2xl xl:text-3xl">
-              /ˌfʊl stæk dɪˈvɛləpər/
-            </dd>
-          </dl>
-
-          <div className="mt-2 w-full max-w-4xl sm:mt-3 lg:mt-4 xl:mt-5">
-            <p className="text-justify text-sm text-[#363636] sm:text-base lg:text-2xl xl:text-3xl">
-              Engineering end-to-end digital solutions that combine responsive
-              React and Next.js interfaces with reliable backend systems built
-              in C#, Laravel, and Node.js. I focus on creating clean, scalable,
-              and maintainable applications that balance performance, usability,
-              and long-term flexibility.
-            </p>
+            {/* Primary Header */}
+            <div
+              ref={contentRef}
+              className="absolute top-0 left-0 flex w-full flex-col gap-2 p-5"
+              style={{
+                transform: `translate(${-box.x}px, ${-box.y}px)`,
+              }}
+            >
+              <h6 className="font-heading text-base tracking-wide text-neutral-500">
+                Hi I&apos;m Carl! - Full Stack Developer
+              </h6>
+              <h1 className="break-word font-heading text-3xl leading-[1.08] font-black tracking-tight text-wrap text-secondary sm:text-4xl md:text-4xl lg:text-4xl xl:text-[46px] 2xl:text-[4rem]">
+                Bridging <span className="text-accent">beautiful</span>{" "}
+                interfaces with{" "}
+                <span className="text-accent">robust architecture</span>
+              </h1>
+            </div>
           </div>
-        </div>
-      </section>
-    </>
+          {/* Social Links */}
+          <div className="mt-2 flex flex-wrap gap-4">
+            {socialLinks.map((link) => (
+              <Link
+                key={link.index}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 font-heading text-lg font-medium text-secondary lowercase hover:underline"
+              >
+                {link.name} <ArrowUpRight className="inline-block h-4 w-4" />
+              </Link>
+            ))}
+          </div>
+          {/* Brief Intro */}
+          <div className="flex flex-col gap-4 lg:gap-5 xl:gap-20">
+            <p className="text-justify text-base text-secondary">
+              As a Full Stack Developer I design and engineer intuitive and
+              robust web platforms from the ground up. Whether I am crafting
+              user-centric interfaces with React or structuring robust database
+              schemes with PostgreSQL, my goal is to build digital experiences
+              that perform beautifully.
+            </p>
+            <button className="w-fit bg-accent px-6 py-2 text-lg font-medium text-background transition-colors hover:bg-accent/80">
+              Get to know me!
+            </button>
+          </div>
+        </section>
+
+        {/* Right Image Column */}
+        <section className="flex justify-center lg:col-span-5 lg:justify-end">
+          <div className="relative aspect-600/695 w-full max-w-150 shrink-0">
+            <Image
+              src={PersonInSuite}
+              alt="Carl Malabanan"
+              fill
+              sizes="(max-width: 1024px) 100vw, 620px"
+              className="object-cover object-top"
+              priority
+            />
+          </div>
+        </section>
+      </div>
+    </main>
   )
 }
