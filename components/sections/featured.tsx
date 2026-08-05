@@ -20,7 +20,7 @@ export default function Featured() {
                 {project.title}
               </h3>
               <p className="font-sans text-secondary">{project.description}</p>
-              <div className="shrink-0 object-cover object-center">
+              <div className="shrink-0 border border-gray-200 object-cover object-center">
                 <Image
                   src={project.image}
                   alt={project.title}
